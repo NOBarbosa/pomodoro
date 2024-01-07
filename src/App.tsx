@@ -1,14 +1,18 @@
 import { ThemeProvider } from "styled-components";
-import { defaultTheme } from "./styles/themes/default";
-import { GlobalStyle } from "./styles/themes/global";
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./Router";
 
-function App() {
+import { defaultTheme } from "./styles/themes/default";
+import { GlobalStyle } from "./styles/global";
+
+export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <div>POMODORO</div>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+
       <GlobalStyle />
     </ThemeProvider>
   );
 }
-
-export default App;
